@@ -77,7 +77,7 @@ function ContactPage() {
                 <span className="w-12 h-12 grid place-items-center rounded-2xl bg-gradient-primary text-white"><Clock className="w-5 h-5" /></span>
                 <div>
                   <p className="text-sm text-muted-foreground">Clinic working hours</p>
-                  <p className="font-semibold">Mon – Sat: 10:00 AM – 8:00 PM &middot; Sun: By appointment</p>
+                  <p className="font-semibold">Mon – Sat: 9:00 AM – 8:00 PM</p>
                 </div>
               </div>
               <a href="tel:07777066990" className="inline-flex items-center gap-2 rounded-full bg-sky-400 text-white px-5 py-2.5 text-sm font-medium shadow-soft hover:bg-sky-500 transition-all">
@@ -245,8 +245,8 @@ function ContactCards() {
     {
       icon: MapPin,
       title: "Visit Us",
-      lines: ["Shop No 6, Morphosis Adagio,", "Dindayal Upadhyay Marg, Mulund West, Mumbai 400080"],
-      href: "https://maps.google.com/?q=Shop+No+6+Morphosis+Adagio+Mulund+West+Mumbai",
+      lines: ["Shop No. 6, Morphosis Adagio,", "Next to Gala Company, Mulund West, Mumbai 400080"],
+      href: "https://www.google.com/maps/place/MULUND+EYE+CARE",
       cta: "Get Directions",
       external: true,
     },
@@ -260,19 +260,17 @@ function ContactCards() {
           href={c.href}
           target={c.external || c.whatsapp ? "_blank" : undefined}
           rel="noreferrer"
-          className={`group block rounded-3xl p-6 border shadow-soft hover-lift transition-all ${
-            c.highlight
+          className={`group block rounded-3xl p-6 border shadow-soft hover-lift transition-all ${c.highlight
               ? "text-white border-transparent bg-sky-400 shadow-elegant"
               : c.whatsapp
-              ? "text-white border-transparent"
-              : "bg-white border-border"
-          }`}
+                ? "text-white border-transparent"
+                : "bg-white border-border"
+            }`}
           style={c.whatsapp ? { background: "linear-gradient(135deg, oklch(0.55 0.13 168), oklch(0.66 0.11 185))" } : undefined}
         >
           <div className="flex items-start gap-4">
-            <span className={`w-12 h-12 grid place-items-center rounded-2xl shrink-0 transition-transform group-hover:scale-110 ${
-              c.highlight || c.whatsapp ? "bg-white/20 text-white" : "bg-mint text-teal"
-            }`}>
+            <span className={`w-12 h-12 grid place-items-center rounded-2xl shrink-0 transition-transform group-hover:scale-110 ${c.highlight || c.whatsapp ? "bg-white/20 text-white" : "bg-mint text-teal"
+              }`}>
               <c.icon className="w-5 h-5" />
             </span>
             <div className="flex-1">
@@ -292,19 +290,33 @@ function ContactCards() {
 }
 
 function MapSection() {
-  const mapsLink = "https://maps.google.com/?q=Shop+No+6+Morphosis+Adagio+Mulund+West+Mumbai";
+  const mapsLink = "https://www.google.com/maps/place/MULUND+EYE+CARE/@19.1678255,72.9363574,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b8f9e6e8e8e7:0x8e8e8e8e8e8e8e8e!8m2!3d19.1678255!4d72.9389323!16s%2Fg%2F11jg9z_x_y"; // This is a placeholder for the actual place ID link
   const embedSrc =
-    "https://www.google.com/maps?q=Morphosis+Adagio+Dindayal+Upadhyay+Marg+Mulund+West+Mumbai+400080&output=embed";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15074.200414427098!2d72.94148490186639!3d19.171160912847004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b864f08216a9%3A0x99635ae881062b0c!2sMULUND%20EYE%20CARE!5e0!3m2!1sen!2sin!4v1778805436183!5m2!1sen!2sin";
   return (
-    <section className="pb-20">
+    <section className="pt-10 pb-20">
       <div className="container mx-auto px-4">
-        <Reveal>
-          <SectionHeader eyebrow="Find us" title="Visit our clinic in Mulund West." description="Centrally located near Gala Company on Dindayal Upadhyay Marg." />
-        </Reveal>
+        <div className="text-center max-w-4xl mx-auto mb-10">
+          <span className="inline-flex items-center gap-2 rounded-full bg-mint text-navy px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal" /> Find us
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">Visit our clinic in Mulund West.</h2>
+          <div className="bg-ice border border-sky-100 rounded-3xl p-6 md:p-8 shadow-soft inline-block max-w-2xl">
+            <div className="flex flex-col md:flex-row items-center gap-4 text-left">
+              <span className="w-12 h-12 shrink-0 grid place-items-center rounded-2xl bg-teal text-white">
+                <MapPin className="w-6 h-6" />
+              </span>
+              <p className="text-lg md:text-xl font-bold text-navy leading-relaxed">
+                Shop No. 6, Morphosis Adagio, Dindayal Upadhyay Marg, Next to Gala Company, BJ Nagar, Siddharth Nagar, Mulund West, Mumbai 400080
+              </p>
+            </div>
+          </div>
+        </div>
+
         <Reveal delay={0.1}>
           <div className="mt-10 relative group rounded-3xl overflow-hidden border border-border shadow-elegant">
             <a href={mapsLink} target="_blank" rel="noreferrer" className="block">
-              <div className="relative aspect-[16/9] w-full bg-mint">
+              <div className="relative aspect-[21/9] w-full bg-mint">
                 <iframe
                   title="Mulund Eye Care location"
                   src={embedSrc}
@@ -316,6 +328,7 @@ function MapSection() {
                 <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/30" />
               </div>
             </a>
+
             <a
               href={mapsLink}
               target="_blank"

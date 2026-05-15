@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import heroEye from "@/assets/hero-eye.jpg";
-import clinicInterior from "@/assets/clinic-interior.jpg";
+import clinicInterior2 from "./clinic-interior2.png"
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
 
@@ -149,7 +149,7 @@ function Intro() {
         <Reveal>
           <div className="relative">
             <div className="absolute -inset-6 bg-gradient-soft rounded-3xl -z-10" />
-            <img src={clinicInterior} alt="Modern ophthalmology clinic" loading="lazy" width={1600} height={1100} className="rounded-3xl shadow-elegant" />
+            <img src={clinicInterior2} alt="Modern ophthalmology clinic" loading="lazy" width={1500} height={800} className="rounded-3xl shadow-elegant" />
             <div className="absolute -bottom-6 -right-6 glass rounded-2xl p-4 shadow-card hidden sm:block">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-primary grid place-items-center text-white">

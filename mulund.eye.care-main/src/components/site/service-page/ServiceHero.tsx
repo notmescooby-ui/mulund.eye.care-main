@@ -23,8 +23,6 @@ export function ServiceHero({ title, subtitle, description, icon: Icon }: Props)
   const doctorFeatures = [
     { icon: Award, title: "Experienced Ophthalmologist", text: "Expert surgical precision & care." },
     { icon: Heart, title: "Personalized Patient Care", text: "Care plans tailored to your eyes." },
-    { icon: ShieldCheck, title: "Modern Eye Diagnostics", text: "Advanced diagnostic equipment." },
-    { icon: Users, title: "Trusted Vision Expertise", text: "Over 25,000+ happy patients." },
   ];
 
   const backgroundImages: Record<string, string> = {
@@ -152,30 +150,30 @@ export function ServiceHero({ title, subtitle, description, icon: Icon }: Props)
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className={`rounded-[40px] p-8 md:p-10 border border-white/20 ${isCinematic ? "bg-white/15 shadow-[0_40px_120px_-70px_rgba(8,30,60,0.65)] backdrop-blur-3xl" : "glass border-white/60 shadow-elegant"} relative overflow-hidden`}
+              className={`rounded-[32px] p-6 md:p-8 border border-white/20 ${isCinematic ? "bg-white/10 shadow-[0_40px_100px_-50px_rgba(8,30,60,0.5)] backdrop-blur-3xl" : "glass border-white/60 shadow-elegant"} relative overflow-hidden max-w-md mx-auto lg:mx-0`}
             >
               {/* Soft decorative background for panel */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-200/20 blur-3xl rounded-full" />
               
               <div className="relative">
-                <h3 className={`text-2xl font-bold mb-8 flex items-center gap-3 ${isCinematic ? "text-slate-100" : "text-navy"}`}>
+                <h3 className={`text-xl font-bold mb-6 flex items-center gap-3 ${isCinematic ? "text-slate-100" : "text-navy"}`}>
                   Why Dr. Shailendra Nanaware?
-                  <span className="w-2 h-2 rounded-full bg-teal" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal" />
                 </h3>
 
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {doctorFeatures.map((f, i) => (
                     <motion.div 
                       key={i}
                       whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.4)" }}
-                      className="group flex gap-5 items-start p-5 rounded-[24px] bg-white/30 border border-white/40 transition-all duration-300 hover:shadow-soft"
+                      className="group flex gap-4 items-start p-4 rounded-[20px] bg-white/25 border border-white/30 transition-all duration-300 hover:shadow-soft"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal grid place-items-center shrink-0 group-hover:bg-teal group-hover:text-white transition-all">
-                        <f.icon className="w-5 h-5" />
+                      <div className="w-9 h-9 rounded-lg bg-teal-50 text-teal grid place-items-center shrink-0 group-hover:bg-teal group-hover:text-white transition-all">
+                        <f.icon className="w-4.5 h-4.5" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-navy mb-0.5">{f.title}</h4>
-                        <p className="text-sm text-muted-foreground">{f.text}</p>
+                        <h4 className="font-bold text-navy text-sm mb-0.5">{f.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-tight">{f.text}</p>
                       </div>
                     </motion.div>
                   ))}

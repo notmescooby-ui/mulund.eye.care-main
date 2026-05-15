@@ -19,8 +19,8 @@ export const Route = createFileRoute("/services/$serviceId")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData.title} — Mulund Eye Care` },
-      { name: "description", content: loaderData.subtitle },
+      { title: `${loaderData?.title} — Mulund Eye Care` },
+      { name: "description", content: loaderData?.subtitle },
     ],
   }),
   component: ServiceDetailsPage,
