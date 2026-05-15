@@ -25,7 +25,7 @@ const services = [
   { id: "computer-vision", icon: Monitor, title: "Computer Vision Syndrome", desc: "Care for digital eye strain, fatigue, headaches and discomfort.", more: "Screen ergonomics, customized lenses and targeted relief strategies." },
   { id: "pediatric", icon: Baby, title: "Pediatric Eye Care", desc: "Gentle, child-friendly assessments and visual development support.", more: "Vision screening, amblyopia management, pediatric refraction and visual therapy." },
   { id: "contact-lens", icon: Glasses, title: "Contact Lens Consultation", desc: "Fittings, trials and care guidance for safe, comfortable lens wear.", more: "Soft, toric and specialty contact lens evaluations with follow-up support." },
-  { id: "refractive-error", icon: Sparkles, title: "Refractive Error Testing", desc: "Accurate prescription for myopia, hyperopia and astigmatism.", more: "Modern refraction techniques and personalized eyewear recommendations." },
+  { id: "lasik-evaluation", icon: Sparkles, title: "LASIK Evaluation Service", desc: "Expert assessment to determine your candidacy for permanent vision correction.", more: "Includes corneal mapping, thickness checks and personalized consultation for laser vision correction." },
   { id: "vision-therapy", icon: Lightbulb, title: "Vision Therapy", desc: "Targeted exercises to improve visual function and comfort.", more: "Customized programs for binocular vision issues, focusing problems and more." },
 ];
 

@@ -10,6 +10,7 @@ import glaucomaBg from "@/assets/glaucoma-bg.png";
 import lensConsultationBg from "@/assets/lens-consultation-bg.png";
 import pediatricBg from "@/assets/pediatric-bg.png";
 import refractiveBg from "@/assets/refractive-bg.png";
+import lasikBg from "@/assets/lasik-bg.png";
 import visionTherapyBg from "@/assets/vision therapy-bg.jpg";
 
 type Props = {
@@ -20,10 +21,6 @@ type Props = {
 };
 
 export function ServiceHero({ title, subtitle, description, icon: Icon }: Props) {
-  const doctorFeatures = [
-    { icon: Award, title: "Experienced Ophthalmologist", text: "Expert surgical precision & care." },
-    { icon: Heart, title: "Personalized Patient Care", text: "Care plans tailored to your eyes." },
-  ];
 
   const backgroundImages: Record<string, string> = {
     "Cataract Evaluation & Surgery": cataractBg,
@@ -33,7 +30,7 @@ export function ServiceHero({ title, subtitle, description, icon: Icon }: Props)
     "Glaucoma Screening & Management": glaucomaBg,
     "Contact Lens Consultation": lensConsultationBg,
     "Pediatric Eye Care": pediatricBg,
-    "Refractive Error Testing": refractiveBg,
+    "LASIK Evaluation Service": lasikBg,
     "Vision Therapy": visionTherapyBg,
     "Comprehensive Eye Checkup": eyeCheck,
   };
@@ -102,29 +99,29 @@ export function ServiceHero({ title, subtitle, description, icon: Icon }: Props)
         <div className="absolute inset-0 z-0 bg-slate-50" />
       )}
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
-          {/* Left Side: Informational Layout */}
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          {/* Informational Layout */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
+            className="flex flex-col items-center"
           >
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 text-white grid place-items-center mb-8 shadow-glow shadow-teal-500/20">
               <Icon className="w-8 h-8" />
             </div>
             
-            <h1 className={`text-5xl md:text-7xl font-bold leading-[1.05] mb-4 tracking-tight ${isCinematic ? "text-white" : "text-navy"}`}>
+            <h1 className={`text-5xl md:text-7xl font-bold leading-[1.05] mb-6 tracking-tight ${isCinematic ? "text-white" : "text-navy"}`}>
               {title}
             </h1>
             <p className={`text-xl md:text-2xl font-semibold mb-6 leading-tight ${isCinematic ? "text-cyan-200" : "text-teal"}`}>
               {subtitle}
             </p>
-            <p className={`text-lg leading-relaxed max-w-xl mb-10 ${isCinematic ? "text-slate-100/90" : "text-muted-foreground"}`}>
+            <p className={`text-lg leading-relaxed max-w-2xl mb-10 ${isCinematic ? "text-slate-100/90" : "text-muted-foreground"}`}>
               {description}
             </p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
                 className={`inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold transition-all ${isCinematic ? "bg-cyan-400 text-slate-950 shadow-[0_20px_50px_-30px_rgba(56,189,248,0.8)] hover:bg-cyan-500" : "bg-sky-500 text-white shadow-soft hover:bg-sky-600"}`}
@@ -139,50 +136,7 @@ export function ServiceHero({ title, subtitle, description, icon: Icon }: Props)
               </a>
             </div>
           </motion.div>
-
-          {/* Right Side: Doctor Feature Panel */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.25 }}
-            className="relative"
-          >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className={`rounded-[32px] p-6 md:p-8 border border-white/20 ${isCinematic ? "bg-white/10 shadow-[0_40px_100px_-50px_rgba(8,30,60,0.5)] backdrop-blur-3xl" : "glass border-white/60 shadow-elegant"} relative overflow-hidden max-w-md mx-auto lg:mx-0`}
-            >
-              {/* Soft decorative background for panel */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-200/20 blur-3xl rounded-full" />
-              
-              <div className="relative">
-                <h3 className={`text-xl font-bold mb-6 flex items-center gap-3 ${isCinematic ? "text-slate-100" : "text-navy"}`}>
-                  Why Dr. Shailendra Nanaware?
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal" />
-                </h3>
-
-                <div className="grid gap-3">
-                  {doctorFeatures.map((f, i) => (
-                    <motion.div 
-                      key={i}
-                      whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.4)" }}
-                      className="group flex gap-4 items-start p-4 rounded-[20px] bg-white/25 border border-white/30 transition-all duration-300 hover:shadow-soft"
-                    >
-                      <div className="w-9 h-9 rounded-lg bg-teal-50 text-teal grid place-items-center shrink-0 group-hover:bg-teal group-hover:text-white transition-all">
-                        <f.icon className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-navy text-sm mb-0.5">{f.title}</h4>
-                        <p className="text-xs text-muted-foreground leading-tight">{f.text}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
         </div>
-      </div>
     </section>
   );
 }

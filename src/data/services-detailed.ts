@@ -1,4 +1,14 @@
 import { Eye, Sun, Activity, Droplets, Monitor, Baby, Glasses, Stethoscope, Sparkles, Lightbulb } from "lucide-react";
+import cataractService from "@/assets/cataract-service.png";
+import glaucomaService from "@/assets/glaucoma-service.png";
+import dryEyeService from "@/assets/dry-eye-service.png";
+import checkupService from "@/assets/eye-check-service.png";
+import diabeticService from "@/assets/diabetic-service.png";
+import pediatricService from "@/assets/pediatric-service.png";
+import computerVisionService from "@/assets/computer-vision-syndrome-service.png";
+import contactLensService from "@/assets/contact-lens-service.png";
+import lasikService from "@/assets/lasik-service.png";
+import visionTherapyService from "@/assets/vision-therapy-service.png";
 
 export type ServiceDetail = {
   id: string;
@@ -26,7 +36,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     icon: Sun,
     simulationType: "cataract",
     conditionExplanation: "A cataract is a clouding of the eye's natural lens, which lies behind the iris and the pupil. Cataracts are the most common cause of vision loss in people over age 40 and is the principal cause of blindness in the world.",
-    overviewImage: "https://images.unsplash.com/photo-1581594658553-35942489435b?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: cataractService,
     symptoms: [
       { icon: Eye, title: "Cloudy Vision", description: "Vision that is blurry, foggy, or filmy." },
       { icon: Sun, title: "Glare Sensitivity", description: "Difficulty seeing at night or sensitivity to bright lights." },
@@ -56,7 +66,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     icon: Activity,
     simulationType: "glaucoma",
     conditionExplanation: "Glaucoma is a group of eye conditions that damage the optic nerve, the health of which is vital for good vision. This damage is often caused by an abnormally high pressure in your eye.",
-    overviewImage: "https://images.unsplash.com/photo-1624777429662-7936a281896e?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: glaucomaService,
     symptoms: [
       { icon: Activity, title: "Peripheral Loss", description: "Loss of side vision, often unnoticed in early stages." },
       { icon: Eye, title: "Halos Around Lights", description: "Seeing rainbow-colored circles around lights." },
@@ -85,7 +95,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     shortDescription: "Experience lasting relief from burning, itching, and dryness with our specialized tear-film analysis and personalized dry eye therapy.",
     icon: Droplets,
     conditionExplanation: "Dry eye disease is a common condition that occurs when your tears aren't able to provide adequate lubrication for your eyes. Tears can be inadequate and unstable for many reasons.",
-    overviewImage: "https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: dryEyeService,
     symptoms: [
       { icon: Droplets, title: "Gritty Sensation", description: "Feeling like something is in your eye." },
       { icon: Sparkles, title: "Redness", description: "Bloodshot eyes or persistent irritation." },
@@ -114,7 +124,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     shortDescription: "A thorough evaluation of your vision and overall ocular health using the latest clinical technology to ensure early detection of any issues.",
     icon: Eye,
     conditionExplanation: "Regular eye exams are a critical part of maintaining overall health. A comprehensive checkup goes beyond just reading a chart; it involves a series of tests to evaluate your vision and check for eye diseases.",
-    overviewImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: checkupService,
     symptoms: [
       { icon: Eye, title: "Blurry Vision", description: "Difficulty focusing on near or far objects." },
       { icon: Monitor, title: "Eye Strain", description: "Tiredness or discomfort after long periods of focus." },
@@ -144,7 +154,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     icon: Stethoscope,
     simulationType: "glaucoma", // Similar blur effect for now
     conditionExplanation: "Diabetes can lead to diabetic retinopathy, a condition that damages the blood vessels in the retina. It is a leading cause of vision loss among working-age adults.",
-    overviewImage: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: diabeticService,
     symptoms: [
       { icon: Sparkles, title: "Floating Spots", description: "Dark strings or spots floating in your vision." },
       { icon: Eye, title: "Fluctuating Vision", description: "Vision that changes from day to day." },
@@ -173,7 +183,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     shortDescription: "Child-friendly eye examinations that focus on visual development, helping your child succeed in school and play with healthy eyes.",
     icon: Baby,
     conditionExplanation: "Vision is closely linked to a child's learning process. Early eye exams help detect issues like lazy eye (amblyopia) or crossed eyes (strabismus) that can affect development.",
-    overviewImage: "https://images.unsplash.com/photo-1581594658553-35942489435b?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: pediatricService,
     symptoms: [
       { icon: Eye, title: "Squinting", description: "Frequently squinting to see clearly." },
       { icon: Activity, title: "Tilting Head", description: "Tilting the head to look at things." },
@@ -202,7 +212,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     shortDescription: "Relieve digital eye strain and enhance your productivity with our comprehensive computer vision assessment and ergonomic guidance.",
     icon: Monitor,
     conditionExplanation: "Computer Vision Syndrome (CVS) describes a group of eye and vision-related problems that result from prolonged computer, tablet, and cell phone use. Most symptoms are temporary and decline after stopping computer work.",
-    overviewImage: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: computerVisionService,
     symptoms: [
       { icon: Monitor, title: "Digital Fatigue", description: "Tiredness or soreness in the eyes after screen use." },
       { icon: Activity, title: "Headaches", description: "Pain behind the eyes or in the forehead." },
@@ -231,7 +241,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     shortDescription: "Expert fitting for soft, toric, and specialty contact lenses, ensuring optimal eye health and clear vision for your lifestyle.",
     icon: Glasses,
     conditionExplanation: "Contact lenses provide a wider field of vision and greater freedom for active lifestyles. A professional fitting is essential to ensure eye health and maximum comfort.",
-    overviewImage: "https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: contactLensService,
     symptoms: [
       { icon: Eye, title: "Vision Freedom", description: "Unobstructed view and active lifestyle support." },
       { icon: Glasses, title: "Frame Fatigue", description: "Discomfort from heavy or ill-fitting glasses." },
@@ -252,34 +262,34 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
       { label: "Brands Offered", value: "10+" },
     ],
   },
-  "refractive-error": {
-    id: "refractive-error",
-    title: "Refractive Error Testing",
-    subtitle: "Precision vision correction for life's sharpest details.",
+  "lasik-evaluation": {
+    id: "lasik-evaluation",
+    title: "LASIK Evaluation Service",
+    subtitle: "Expert assessment for a life free from glasses and contacts.",
     heroImage: "https://images.unsplash.com/photo-1579154235828-4519829f9394?auto=format&fit=crop&q=80&w=2000",
-    shortDescription: "Our advanced refraction technology ensures the most accurate prescription for your glasses or contacts, eliminating blur and eye strain.",
+    shortDescription: "Our comprehensive LASIK evaluation determines your candidacy for vision correction surgery using advanced corneal mapping and refractive analysis.",
     icon: Sparkles,
     simulationType: "refractive",
-    conditionExplanation: "Refractive errors occur when the shape of your eye keeps light from focusing correctly on your retina. The most common types are nearsightedness, farsightedness, and astigmatism.",
-    overviewImage: "https://images.unsplash.com/photo-1581594658553-35942489435b?auto=format&fit=crop&q=80&w=1200",
+    conditionExplanation: "LASIK (Laser-Assisted In Situ Keratomileusis) is a popular surgery used to correct vision in people who are nearsighted, farsighted, or have astigmatism. Our evaluation ensures your eyes are healthy and suitable for the procedure.",
+    overviewImage: lasikService,
     symptoms: [
-      { icon: Eye, title: "Blurred Vision", description: "Objects at a distance or close-up appear fuzzy." },
-      { icon: Activity, title: "Squinting", description: "Automatically squinting to see more clearly." },
-      { icon: Monitor, title: "Visual Fatigue", description: "Eyes feel tired or strained after focused work." },
+      { icon: Eye, title: "Glasses Dependency", description: "Dependence on corrective eyewear for daily activities." },
+      { icon: Droplets, title: "Contact Lens Issues", description: "Irritation, dryness or intolerance to contact lenses." },
+      { icon: Activity, title: "Active Lifestyle", description: "Desire for clear vision during sports and outdoor activities." },
     ],
     timeline: [
-      { title: "Initial Reading", description: "Automated refraction for a baseline measurement." },
-      { title: "Refined Testing", description: "Subjective refraction using a phoropter for precision." },
-      { title: "Eye Health Check", description: "Brief check to ensure no other factors are affecting vision." },
-      { title: "Prescription", description: "Finalized lens power for optimal clarity." },
+      { title: "Detailed Workup", description: "In-depth refraction and eye health assessment." },
+      { title: "Corneal Topography", description: "Precise mapping of your eye's surface curvature." },
+      { title: "Pachymetry", description: "Measuring corneal thickness for surgical safety." },
+      { title: "Candidate Review", description: "Doctor consultation to discuss your specific vision goals." },
     ],
     faqs: [
-      { question: "What is astigmatism?", answer: "An imperfection in the eye's curvature that causes blurred vision." },
-      { question: "How often should I re-test?", answer: "Annually or whenever you notice a change in your clarity." },
+      { question: "Am I a candidate for LASIK?", answer: "Most adults with stable vision and healthy corneas are candidates. Our evaluation confirms this." },
+      { question: "How long does the evaluation take?", answer: "A thorough pre-LASIK workup usually takes about 60 to 90 minutes." },
     ],
     stats: [
-      { label: "Prescription Accuracy", value: "99.9%" },
-      { label: "Patients Served", value: "15000+" },
+      { label: "Candidacy Accuracy", value: "100%" },
+      { label: "Successful Outcomes", value: "10,000+" },
     ],
   },
   "vision-therapy": {
@@ -290,7 +300,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     shortDescription: "A customized program of visual exercises designed to improve binocular vision, focusing, and visual processing skills.",
     icon: Lightbulb,
     conditionExplanation: "Vision therapy is a specialized treatment program used to correct certain vision problems that cannot be fully corrected with glasses, contact lenses, or surgery alone.",
-    overviewImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
+    overviewImage: visionTherapyService,
     symptoms: [
       { icon: Activity, title: "Double Vision", description: "Seeing two images of a single object." },
       { icon: Monitor, title: "Tracking Issues", description: "Difficulty following moving objects or lines of text." },

@@ -37,7 +37,7 @@ const services = [
   "Computer Vision Syndrome",
   "Pediatric Eye Care",
   "Contact Lens Consultation",
-  "Refractive Error Testing",
+  "LASIK Evaluation Service",
   "Vision Therapy",
 ];
 

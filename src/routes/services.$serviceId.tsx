@@ -17,12 +17,15 @@ export const Route = createFileRoute("/services/$serviceId")({
     }
     return service;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.title} — Mulund Eye Care` },
-      { name: "description", content: loaderData?.subtitle },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) return {};
+    return {
+      meta: [
+        { title: `${loaderData.title} — Mulund Eye Care` },
+        { name: "description", content: loaderData.subtitle },
+      ],
+    };
+  },
   component: ServiceDetailsPage,
 });
 

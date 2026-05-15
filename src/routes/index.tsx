@@ -2,12 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
   Eye, Stethoscope, Microscope, HeartHandshake, Calendar, Phone,
-  ShieldCheck, Sparkles, Award, Users, Star, ArrowRight, ChevronDown,
-  Activity, Glasses, Baby, Sun, Droplets, Monitor,
+  ShieldCheck, Sparkles, Award, Users, ArrowRight, ChevronDown,
+  Activity, Glasses, Baby, Sun, Droplets, Monitor, Heart,
 } from "lucide-react";
 import { useState } from "react";
 import heroEye from "@/assets/hero-eye.jpg";
-import clinicInterior2 from "./clinic-interior2.png"
+import clinicInterior2 from "@/assets/clinic-interior2.png"
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
 
@@ -28,7 +28,7 @@ const trustBadges = [
 ];
 
 const stats = [
-  { value: "15+", label: "Years of Experience" },
+  { value: "20+", label: "Years of Experience" },
   { value: "25k+", label: "Happy Patients" },
   { value: "10+", label: "Specialized Services" },
   { value: "98%", label: "Satisfaction Rate" },
@@ -43,11 +43,6 @@ const treatments = [
   { icon: Baby, title: "Pediatric Eye Care", desc: "Gentle, child-friendly assessments and treatment." },
 ];
 
-const testimonials = [
-  { name: "Priya Sharma", role: "Patient", text: "The team at Mulund Eye Care made my cataract surgery effortless. Calm, modern, and incredibly thorough." },
-  { name: "Rohit Mehta", role: "Patient", text: "Best diagnostic experience I've had. The doctors took time to explain everything in detail." },
-  { name: "Anita Desai", role: "Patient", text: "From reception to consultation, every step felt premium and personal. Highly recommend." },
-];
 
 const faqs = [
   { q: "How often should I get an eye examination?", a: "We recommend a comprehensive eye exam every 1–2 years for healthy adults, and annually for those over 40 or with vision concerns." },
@@ -63,7 +58,7 @@ function HomePage() {
       <Stats />
       <Trust />
       <Treatments />
-      <Testimonials />
+      <DoctorFeatures />
       <FAQPreview />
       <CTABanner />
     </SiteLayout>
@@ -275,43 +270,43 @@ function Treatments() {
   );
 }
 
-function Testimonials() {
-  const [i, setI] = useState(0);
-  const t = testimonials[i];
+function DoctorFeatures() {
+  const features = [
+    { icon: Award, title: "20+ Years Excellence", text: "Dr. Nanaware has been a dedicated leader in ophthalmology for more than two decades." },
+    { icon: Users, title: "25k+ Happy Patients", text: "Over 25,000 lives touched through compassionate consultation and expert treatment." },
+    { icon: Microscope, title: "Surgical Precision", text: "Expertly performed thousands of complex eye surgeries with state-of-the-art technology." },
+    { icon: ShieldCheck, title: "Ethical & Professional", text: "Consulted many patients over his time in the profession with honesty and care." },
+  ];
+
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <Reveal><SectionHeader eyebrow="Patient stories" title="Loved by families across Mulund." /></Reveal>
-        <div className="mt-12 max-w-3xl mx-auto">
-          <Reveal>
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-              className="bg-gradient-card border border-border rounded-3xl p-8 md:p-10 shadow-card"
-            >
-              <div className="flex gap-1 text-teal">
-                {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="w-4 h-4 fill-current" />)}
-              </div>
-              <p className="mt-5 text-lg md:text-xl leading-relaxed">"{t.text}"</p>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-gradient-primary grid place-items-center text-white font-semibold">
-                  {t.name[0]}
-                </div>
-                <div>
-                  <p className="font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          </Reveal>
-          <div className="mt-6 flex justify-center gap-2">
-            {testimonials.map((_, k) => (
-              <button
-                key={k} onClick={() => setI(k)} aria-label={`Testimonial ${k + 1}`}
-                className={`h-2 rounded-full transition-all ${k === i ? "w-8 bg-gradient-primary" : "w-2 bg-border"}`}
-              />
-            ))}
+    <section className="py-24 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-teal/5 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-400/5 blur-3xl rounded-full" />
+      
+      <div className="container mx-auto px-4 relative">
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 rounded-full bg-mint text-navy px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">The Specialist</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">Why Dr. Shailendra Nanaware?</h2>
+            <p className="text-muted-foreground text-lg">With over 20 years in the industry, Dr. Nanaware has performed countless surgeries and consulted many patients, bringing unparalleled expertise to every case.</p>
           </div>
+        </Reveal>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((f, i) => (
+            <Reveal key={i} delay={i * 0.1}>
+              <motion.div
+                whileHover={{ y: -8 }}
+                className="h-full glass border-white/60 p-8 rounded-[32px] shadow-elegant group transition-all"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gradient-primary text-white grid place-items-center mb-6 group-hover:scale-110 transition-transform">
+                  <f.icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-navy mb-3">{f.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{f.text}</p>
+              </motion.div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

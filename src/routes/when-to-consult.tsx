@@ -16,7 +16,7 @@ export const Route = createFileRoute("/when-to-consult")({
 });
 
 const symptoms = [
-  { icon: Eye, title: "Blurry Vision", may: "May indicate refractive error, cataract or retinal issues.", why: "Early correction prevents strain and protects long-term vision." },
+  { icon: Eye, title: "Blurry Vision", may: "May indicate LASIK eligibility, cataract or retinal issues.", why: "Early correction prevents strain and protects long-term vision." },
   { icon: AlertCircle, title: "Frequent Headaches", may: "Often linked to uncorrected vision or eye strain.", why: "A simple checkup can identify and resolve the underlying cause." },
   { icon: AlertTriangle, title: "Eye Redness", may: "Could indicate infection, allergy or inflammation.", why: "Prompt evaluation prevents complications and discomfort." },
   { icon: ZapOff, title: "Sudden Vision Loss", may: "May signal a serious retinal or neurological event.", why: "This is a medical emergency — seek immediate consultation.", urgent: true },

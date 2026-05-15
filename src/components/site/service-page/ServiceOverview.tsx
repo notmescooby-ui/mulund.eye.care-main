@@ -39,12 +39,12 @@ export function ServiceOverview({ explanation, image }: Props) {
               initial={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative rounded-[40px] overflow-hidden shadow-elegant group"
+              className="relative rounded-[32px] overflow-hidden shadow-soft group max-w-md mx-auto border border-border"
             >
               <img
                 src={image}
                 alt="Medical Illustration"
-                className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-sky-400/10 mix-blend-overlay" />
             </motion.div>
