@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/site/Section";
+import cataractVisionImg from "@/assets/cataract-vision.png";
+import glaucomaVisionImg from "@/assets/glaucoma-vision.png";
+import lasikVisionImg from "@/assets/lasik-vision.png";
 
 type Props = {
-  type?: "cataract" | "refractive" | "glaucoma";
+  type?: "cataract" | "lasik" | "glaucoma";
 };
 
 export function ServiceVisual({ type }: Props) {
@@ -18,13 +21,15 @@ export function ServiceVisual({ type }: Props) {
       beforeLabel: "Cloudy & Yellowed",
       afterLabel: "Restored Clarity",
       beforeStyle: "blur-[8px] sepia-[0.3] brightness-[0.9]",
+      image: cataractVisionImg,
     },
-    refractive: {
-      title: "Myopia (Refractive) Simulation",
+    lasik: {
+      title: "LASIK Simulation",
       description: "See the difference that precise vision correction makes for distant objects.",
       beforeLabel: "Uncorrected Vision",
       afterLabel: "Sharp Focus",
       beforeStyle: "blur-[10px]",
+      image: lasikVisionImg,
     },
     glaucoma: {
       title: "Glaucoma Vision Simulation",
@@ -32,6 +37,7 @@ export function ServiceVisual({ type }: Props) {
       beforeLabel: "Advanced Glaucoma",
       afterLabel: "Full Visual Field",
       beforeStyle: "grayscale opacity-80 [mask-image:radial-gradient(circle,transparent_20%,black_70%)]",
+      image: glaucomaVisionImg,
     }
   };
 
@@ -52,7 +58,7 @@ export function ServiceVisual({ type }: Props) {
           <div className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl cursor-ew-resize select-none border border-sky-100">
             {/* Background (Fixed Image) - used for both sides but manipulated */}
             <img 
-              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000" 
+              src={sim.image} 
               alt="Base view"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -60,7 +66,7 @@ export function ServiceVisual({ type }: Props) {
             {/* Before Layer (Top Layer with Effects) */}
             <div className={`absolute inset-0 z-10 ${sim.beforeStyle}`}>
               <img 
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000" 
+                src={sim.image} 
                 alt="Before treatment"
                 className="w-full h-full object-cover"
               />
@@ -76,7 +82,7 @@ export function ServiceVisual({ type }: Props) {
               style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000" 
+                src={sim.image} 
                 alt="After treatment"
                 className="w-full h-full object-cover"
               />

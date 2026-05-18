@@ -8,6 +8,7 @@ import { ServiceFAQs } from "@/components/site/service-page/ServiceFAQs";
 import { ServiceTrust } from "@/components/site/service-page/ServiceTrust";
 import { ServiceCTA } from "@/components/site/service-page/ServiceCTA";
 import { ServiceVisual } from "@/components/site/service-page/ServiceVisual";
+import cataractSurgeryImg from "@/assets/cataract-surgery.png";
 
 export const Route = createFileRoute("/services/$serviceId")({
   loader: ({ params }) => {
@@ -50,6 +51,20 @@ function ServiceDetailsPage() {
         symptoms={service.symptoms} 
       />
       
+      {service.id === 'cataract' && (
+        <section className="py-12 bg-white relative">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-2xl border border-sky-100">
+              <img 
+                src={cataractSurgeryImg} 
+                alt="Cataract Surgery Process" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
       <ServiceTimeline 
         steps={service.timeline} 
       />

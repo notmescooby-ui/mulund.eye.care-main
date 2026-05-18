@@ -17,7 +17,7 @@ export type ServiceDetail = {
   heroImage: string;
   shortDescription: string;
   icon: any;
-  simulationType?: "cataract" | "refractive" | "glaucoma";
+  simulationType?: "cataract" | "lasik" | "glaucoma";
   conditionExplanation: string;
   overviewImage: string;
   symptoms: { icon: any; title: string; description: string }[];
@@ -269,7 +269,7 @@ export const servicesDetailed: Record<string, ServiceDetail> = {
     heroImage: "https://images.unsplash.com/photo-1579154235828-4519829f9394?auto=format&fit=crop&q=80&w=2000",
     shortDescription: "Our comprehensive LASIK evaluation determines your candidacy for vision correction surgery using advanced corneal mapping and refractive analysis.",
     icon: Sparkles,
-    simulationType: "refractive",
+    simulationType: "lasik",
     conditionExplanation: "LASIK (Laser-Assisted In Situ Keratomileusis) is a popular surgery used to correct vision in people who are nearsighted, farsighted, or have astigmatism. Our evaluation ensures your eyes are healthy and suitable for the procedure.",
     overviewImage: lasikService,
     symptoms: [
