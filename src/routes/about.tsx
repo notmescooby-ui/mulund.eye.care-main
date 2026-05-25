@@ -43,7 +43,7 @@ function AboutPage() {
                   <div className="w-10 h-10 rounded-full bg-gradient-primary grid place-items-center text-white"><Award className="w-5 h-5" /></div>
                   <div>
                     <p className="text-xs text-muted-foreground">Trusted by</p>
-                    <p className="text-sm font-semibold">25,000+ patients</p>
+                    <p className="text-sm font-semibold">patients for 20+ years</p>
                   </div>
                 </div>
               </div>
