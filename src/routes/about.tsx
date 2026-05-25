@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Eye, Heart, Target, Microscope, Stethoscope, Award } from "lucide-react";
 import doctor2 from "@/assets/doctor2.jpg";
-import clinic from "@/assets/clinic-interior.jpg";
-import exam from "@/assets/exam.jpg";
-import heroEye from "@/assets/hero-eye.jpg";
+import clinic from "@/assets/ot-about.png";
+import exam from "@/assets/exam.png";
+import heroEye from "@/assets/setup.png";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
 
