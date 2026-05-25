@@ -6,7 +6,7 @@ import {
   Activity, Glasses, Baby, Sun, Droplets, Monitor, Heart,
 } from "lucide-react";
 import { useState } from "react";
-import heroEye from "@/assets/hero-eye.jpg";
+import heroEye from "@/assets/hero-eye.png";
 import clinicInterior2 from "@/assets/clinic-interior2.png"
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
