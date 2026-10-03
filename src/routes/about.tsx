@@ -10,9 +10,10 @@ import { Reveal, SectionHeader } from "@/components/site/Section";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Mulund Eye Care" },
-      { name: "description", content: "Learn about Mulund Eye Care: our mission, vision, patient-first approach and modern ophthalmology services." },
+      { title: "About Mulund Eye Care | Ophthalmology Clinic in Mulund West" },
+      { name: "description", content: "Learn about Mulund Eye Care, our patient-first approach and modern ophthalmology services in Mulund West, Mumbai." },
     ],
+    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/about" }],
   }),
   component: AboutPage,
 });

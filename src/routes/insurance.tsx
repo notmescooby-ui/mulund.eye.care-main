@@ -6,11 +6,12 @@ import { SiteLayout } from "@/components/site/Layout";
 export const Route = createFileRoute("/insurance")({
   head: () => ({
     meta: [
-      { title: "Insurance & Cashless — Mulund Eye Care" },
+      { title: "Insurance & Cashless Eye Care in Mulund | Mulund Eye Care" },
       { name: "description", content: "Cashless insurance at Mulund Eye Care with Mediassist, Tata AIG, Bajaj Allianz, ACKO, Care Health, Heritage and more." },
       { property: "og:title", content: "Insurance Partners — Mulund Eye Care" },
       { property: "og:description", content: "Cashless treatment, faster admission and stress-free claims with our insurance network." },
     ],
+    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/insurance" }],
   }),
   component: InsurancePage,
 });

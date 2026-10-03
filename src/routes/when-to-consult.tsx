@@ -8,9 +8,10 @@ import { Reveal, SectionHeader } from "@/components/site/Section";
 export const Route = createFileRoute("/when-to-consult")({
   head: () => ({
     meta: [
-      { title: "When Should You Consult an Eye Doctor? — Mulund Eye Care" },
+      { title: "When Should You Consult an Eye Doctor? | Mulund Eye Care" },
       { name: "description", content: "Recognize symptoms that need an eye specialist: blurry vision, headaches, redness, sudden vision loss and more. When to visit Mulund Eye Care." },
     ],
+    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/when-to-consult" }],
   }),
   component: WhenToConsultPage,
 });

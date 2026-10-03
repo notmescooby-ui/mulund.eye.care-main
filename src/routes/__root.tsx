@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
+import { SITE_URL, SITE_NAME, clinicSchema } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -54,15 +55,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mulund Eye Care — Advanced Ophthalmology in Mulund West" },
-      { name: "description", content: "Premium ophthalmology clinic in Mulund West offering comprehensive eye checkups, cataract, glaucoma, and personalized vision care." },
+      { title: "Eye Doctor & Ophthalmologist in Mulund West | Mulund Eye Care" },
+      { name: "description", content: "Mulund Eye Care provides comprehensive eye care, eye checkups and ophthalmology services in Mulund West, Mumbai. Book an appointment for personalized eye care." },
       { name: "author", content: "Mulund Eye Care" },
-      { property: "og:title", content: "Mulund Eye Care — Advanced Ophthalmology" },
-      { property: "og:description", content: "Advanced eye care with precision and compassion in Mulund West, Mumbai." },
+      { property: "og:title", content: "Eye Doctor & Ophthalmologist in Mulund West | Mulund Eye Care" },
+      { property: "og:description", content: "Comprehensive eye care and ophthalmology services in Mulund West, Mumbai." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:site_name", content: SITE_NAME },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
@@ -79,7 +83,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head><HeadContent /></head>
-      <body>{children}<Scripts /></body>
+      <body>
+        {children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }} />
+        <Scripts />
+      </body>
     </html>
   );
 }

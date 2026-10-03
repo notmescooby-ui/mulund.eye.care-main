@@ -11,9 +11,10 @@ import { Reveal, SectionHeader } from "@/components/site/Section";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Book Appointment — Mulund Eye Care" },
-      { name: "description", content: "Book an appointment at Mulund Eye Care. Call, WhatsApp or visit our clinic in Mulund West, Mumbai." },
+      { title: "Contact & Book an Eye Appointment in Mulund | Mulund Eye Care" },
+      { name: "description", content: "Book an eye-care appointment at Mulund Eye Care in Mulund West, Mumbai. Contact us by phone or WhatsApp or visit the clinic." },
     ],
+    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/contact" }],
   }),
   component: ContactPage,
 });

@@ -9,6 +9,7 @@ import { ServiceTrust } from "@/components/site/service-page/ServiceTrust";
 import { ServiceCTA } from "@/components/site/service-page/ServiceCTA";
 import { ServiceVisual } from "@/components/site/service-page/ServiceVisual";
 import cataractSurgeryImg from "@/assets/cataract-surgery.png";
+import { serviceSeo, SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/$serviceId")({
   loader: ({ params }) => {
@@ -20,11 +21,20 @@ export const Route = createFileRoute("/services/$serviceId")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) return {};
+    const seo = serviceSeo[loaderData.id];
+    const title = seo?.title ?? `${loaderData.title} | Mulund Eye Care`;
+    const description = seo?.description ?? loaderData.subtitle;
+    const canonical = `${SITE_URL}/services/${loaderData.id}`;
     return {
       meta: [
-        { title: `${loaderData.title} — Mulund Eye Care` },
-        { name: "description", content: loaderData.subtitle },
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: canonical },
       ],
+      links: [{ rel: "canonical", href: canonical }],
     };
   },
   component: ServiceDetailsPage,
@@ -32,9 +42,20 @@ export const Route = createFileRoute("/services/$serviceId")({
 
 function ServiceDetailsPage() {
   const service = Route.useLoaderData();
+  const seo = serviceSeo[service.id];
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    name: seo?.title ?? `${service.title} | Mulund Eye Care`,
+    description: seo?.description ?? service.subtitle,
+    url: `${SITE_URL}/services/${service.id}`,
+    isPartOf: { "@id": `${SITE_URL}/#clinic` },
+    about: { "@type": "MedicalCondition", name: service.title },
+  };
 
   return (
     <div className="bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <ServiceHero 
         title={service.title} 
         subtitle={service.subtitle} 

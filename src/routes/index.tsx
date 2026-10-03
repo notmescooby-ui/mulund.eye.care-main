@@ -14,9 +14,10 @@ import { Reveal, SectionHeader } from "@/components/site/Section";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mulund Eye Care — Advanced Eye Care with Precision & Compassion" },
-      { name: "description", content: "Expert ophthalmology, advanced diagnostics and personalized vision treatment at Mulund Eye Care, Mulund West, Mumbai." },
+      { title: "Eye Doctor & Ophthalmologist in Mulund West | Mulund Eye Care" },
+      { name: "description", content: "Mulund Eye Care provides comprehensive eye care, eye checkups and ophthalmology services in Mulund West, Mumbai. Book an appointment for personalized eye care." },
     ],
+    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/" }],
   }),
   component: HomePage,
 });

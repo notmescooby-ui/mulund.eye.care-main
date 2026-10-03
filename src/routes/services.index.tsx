@@ -9,9 +9,10 @@ import { Reveal } from "@/components/site/Section";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Mulund Eye Care" },
-      { name: "description", content: "Comprehensive ophthalmology services: cataract, glaucoma, diabetic eye care, dry eye, pediatric and more at Mulund Eye Care." },
+      { title: "Eye Care Services in Mulund West | Mulund Eye Care" },
+      { name: "description", content: "Explore eye care services at Mulund Eye Care, including comprehensive eye checkups, cataract care, glaucoma screening, dry eye treatment, pediatric eye care and more." },
     ],
+    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/services" }],
   }),
   component: ServicesIndexPage,
 });
