@@ -5,14 +5,18 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Section";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Eye Care Services in Mulund West | Mulund Eye Care" },
       { name: "description", content: "Explore eye care services at Mulund Eye Care, including comprehensive eye checkups, cataract care, glaucoma screening, dry eye treatment, pediatric eye care and more." },
+      { property: "og:title", content: "Eye Care Services in Mulund West | Mulund Eye Care" },
+      { property: "og:description", content: "Explore eye care services at Mulund Eye Care, including comprehensive eye checkups, cataract care, glaucoma screening, dry eye treatment, pediatric eye care and more." },
+      { property: "og:url", content: `${SITE_URL}/services` },
     ],
-    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/services" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/services` }],
   }),
   component: ServicesIndexPage,
 });

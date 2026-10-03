@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck, Building2, Clock, HeartHandshake, ShieldCheck, Wallet } from "lucide-react";
 import { Reveal } from "@/components/site/Section";
 import { SiteLayout } from "@/components/site/Layout";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/insurance")({
   head: () => ({
@@ -10,8 +11,9 @@ export const Route = createFileRoute("/insurance")({
       { name: "description", content: "Cashless insurance at Mulund Eye Care with Mediassist, Tata AIG, Bajaj Allianz, ACKO, Care Health, Heritage and more." },
       { property: "og:title", content: "Insurance Partners — Mulund Eye Care" },
       { property: "og:description", content: "Cashless treatment, faster admission and stress-free claims with our insurance network." },
+      { property: "og:url", content: `${SITE_URL}/insurance` },
     ],
-    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/insurance" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/insurance` }],
   }),
   component: InsurancePage,
 });

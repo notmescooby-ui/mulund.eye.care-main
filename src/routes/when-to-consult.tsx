@@ -4,14 +4,18 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/when-to-consult")({
   head: () => ({
     meta: [
       { title: "When Should You Consult an Eye Doctor? | Mulund Eye Care" },
       { name: "description", content: "Recognize symptoms that need an eye specialist: blurry vision, headaches, redness, sudden vision loss and more. When to visit Mulund Eye Care." },
+      { property: "og:title", content: "When Should You Consult an Eye Doctor? | Mulund Eye Care" },
+      { property: "og:description", content: "Recognize symptoms that need an eye specialist: blurry vision, headaches, redness, sudden vision loss and more. When to visit Mulund Eye Care." },
+      { property: "og:url", content: `${SITE_URL}/when-to-consult` },
     ],
-    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/when-to-consult" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/when-to-consult` }],
   }),
   component: WhenToConsultPage,
 });

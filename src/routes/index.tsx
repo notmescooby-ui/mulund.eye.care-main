@@ -10,14 +10,18 @@ import heroEye from "@/assets/hero-eye.png";
 import clinicInterior2 from "@/assets/clinic-interior2.png"
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Eye Doctor & Ophthalmologist in Mulund West | Mulund Eye Care" },
       { name: "description", content: "Mulund Eye Care provides comprehensive eye care, eye checkups and ophthalmology services in Mulund West, Mumbai. Book an appointment for personalized eye care." },
+      { property: "og:title", content: "Eye Doctor & Ophthalmologist in Mulund West | Mulund Eye Care" },
+      { property: "og:description", content: "Mulund Eye Care provides comprehensive eye care, eye checkups and ophthalmology services in Mulund West, Mumbai." },
+      { property: "og:url", content: SITE_URL },
     ],
-    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/" }],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: HomePage,
 });

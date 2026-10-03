@@ -6,14 +6,18 @@ import exam from "@/assets/exam.png";
 import heroEye from "@/assets/setup.png";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Mulund Eye Care | Ophthalmology Clinic in Mulund West" },
       { name: "description", content: "Learn about Mulund Eye Care, our patient-first approach and modern ophthalmology services in Mulund West, Mumbai." },
+      { property: "og:title", content: "About Mulund Eye Care | Ophthalmology Clinic in Mulund West" },
+      { property: "og:description", content: "Learn about Mulund Eye Care, our patient-first approach and modern ophthalmology services in Mulund West, Mumbai." },
+      { property: "og:url", content: `${SITE_URL}/about` },
     ],
-    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/about" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
   }),
   component: AboutPage,
 });

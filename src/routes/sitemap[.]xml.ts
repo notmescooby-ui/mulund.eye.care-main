@@ -16,6 +16,7 @@ interface SitemapEntry {
   path: string;
   changefreq?: "weekly" | "monthly";
   priority?: string;
+  lastmod?: string;
 }
 
 export const Route = createFileRoute("/sitemap.xml")({
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const baseUrl = getBaseUrl();
+        const currentDate = new Date().toISOString().split("T")[0];
         const serviceSlugs = [
           "cataract",
           "glaucoma",
@@ -37,23 +39,24 @@ export const Route = createFileRoute("/sitemap.xml")({
         ];
 
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/about", changefreq: "monthly", priority: "0.8" },
-          { path: "/services", changefreq: "monthly", priority: "0.9" },
+          { path: "/", changefreq: "weekly", priority: "1.0", lastmod: currentDate },
+          { path: "/about", changefreq: "monthly", priority: "0.8", lastmod: currentDate },
+          { path: "/services", changefreq: "monthly", priority: "0.9", lastmod: currentDate },
           ...serviceSlugs.map((slug) => ({
             path: `/services/${slug}`,
             changefreq: "monthly" as const,
             priority: "0.8",
+            lastmod: currentDate,
           })),
-          { path: "/insurance", changefreq: "monthly", priority: "0.7" },
-          { path: "/when-to-consult", changefreq: "monthly", priority: "0.7" },
-          { path: "/contact", changefreq: "monthly", priority: "0.8" },
+          { path: "/insurance", changefreq: "monthly", priority: "0.7", lastmod: currentDate },
+          { path: "/when-to-consult", changefreq: "monthly", priority: "0.7", lastmod: currentDate },
+          { path: "/contact", changefreq: "monthly", priority: "0.8", lastmod: currentDate },
         ];
         const urls = entries
-          .map(
-            (e) =>
-              `  <url>\n    <loc>${baseUrl}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
-          )
+          .map((e) => {
+            const loc = e.path === "/" ? baseUrl : `${baseUrl}${e.path}`;
+            return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`;
+          })
           .join("\n");
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
         return new Response(xml, {

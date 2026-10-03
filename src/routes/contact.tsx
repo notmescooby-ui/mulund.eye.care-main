@@ -7,14 +7,18 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, SectionHeader } from "@/components/site/Section";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact & Book an Eye Appointment in Mulund | Mulund Eye Care" },
       { name: "description", content: "Book an eye-care appointment at Mulund Eye Care in Mulund West, Mumbai. Contact us by phone or WhatsApp or visit the clinic." },
+      { property: "og:title", content: "Contact & Book an Eye Appointment in Mulund | Mulund Eye Care" },
+      { property: "og:description", content: "Book an eye-care appointment at Mulund Eye Care in Mulund West, Mumbai. Contact us by phone or WhatsApp or visit the clinic." },
+      { property: "og:url", content: `${SITE_URL}/contact` },
     ],
-    links: [{ rel: "canonical", href: "https://www.mulundeyecare.com/contact" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
   }),
   component: ContactPage,
 });
